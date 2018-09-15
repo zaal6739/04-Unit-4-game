@@ -9,9 +9,6 @@
     color: gray;
     text-align: center;
    line-height: 2.1;
-   border-style: dashed;
-   border-color: rgba(255, 255, 255, 0.116);
-   border-radius: 25px 5px 5px 25px;
 }
 
 .img-red:hover{
@@ -29,3 +26,8 @@
  .img-green:hover{
     opacity: 0.5 ;
  }
+
+ h3:hover {
+    background-color: yellow;
+    font-style: italic;
+}

@@ -17,8 +17,8 @@ $('#losses').text(losses);
 
 
 function resetGame(){
-    Random=Math.floor(Math.random()*120+19);
-    console.log(Random)
+    rnComputer=Math.floor(Math.random()*120+19);
+    console.log(rnComputer)
     $('#numberToMatch').text(rnComputer);
     rn1= Math.floor(Math.random()*12+1);
     rn2= Math.floor(Math.random()*12+1);
@@ -34,17 +34,72 @@ function resetGame(){
 function playerWins(){
     alert("You won!!!");
       wins++; 
-      $('#wins').text(wins);
-      reset();
+      $('#Wins').text(wins);
+      resetGame();
     }
 
 // display player losses
 function playerLoses(){
     alert ("You Lost!!!");
       losses++;
-      $('#losses').text(losses);
+      $('#Losses').text(losses);
       resetGame()
     }
+
+//crystal click functions
+$('.img-red').on ('click', function(){
+    userTotal = userTotal + rn1;
+        console.log("New Crystal Total= " + userTotal);
+        $('#playerScore').text(userTotal); 
+              //Win condition
+            if (userTotal == rnComputer){
+              playerWins();
+            }
+            else if ( userTotal > rnComputer){
+              playerLoses();
+            }   
+      })
+
+$('.img-blue').on ('click', function(){
+     userTotal = userTotal + rn2;
+        console.log("New Crystal Total= " + userTotal);
+        $('#playerScore').text(userTotal); 
+        //Win condition
+        if (userTotal == rnComputer){
+                playerWins();
+                }
+                else if ( userTotal > rnComputer){
+                playerLoses();
+                }   
+          })
+
+          $('.img-yellow').on ('click', function(){
+            userTotal = userTotal + rn3;
+               console.log("New Crystal Total= " + userTotal);
+               $('#playerScore').text(userTotal); 
+               //win condition
+               if (userTotal == rnComputer){
+                       playerWins();
+                       }
+                       else if ( userTotal > rnComputer){
+                       playerLoses();
+                       }   
+                 })
+
+                 $('.img-green').on ('click', function(){
+                    userTotal = userTotal + rn4;
+                       console.log("New Crystal Total= " + userTotal);
+                       $('#playerScore').text(userTotal); 
+                       //win condition
+                       if (userTotal == rnComputer){
+                               playerWins();
+                               }
+                               else if ( userTotal > rnComputer){
+                               playerLoses();
+                               }   
+                         })
+
+
 
 })
 

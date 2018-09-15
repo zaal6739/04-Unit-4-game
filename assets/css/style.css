@@ -1,0 +1,15 @@
+
+.jumbotron {
+    background-color:whitesmoke;
+    text-align: center;
+}
+
+.instructions {
+    text-align: center;
+    color: gray;
+}
+
+.row-crystals {
+    height: 200px;
+    width: 200px;
+}

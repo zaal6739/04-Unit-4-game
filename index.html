@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- css reset  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <!-- css style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+    <title>
+        Crystals Collector
+    </title>
+   
+</head>
+<body>
+    <!-- heading  -->
+    <div class = "jumbotron text-center">
+        
+        <h1>
+            Crystals Collector!
+        </h1>
+
+    </div>
+    <!-- instructions -->
+    <div class = "container-fluid">
+
+        <div class="row">
+
+            <div class="col-md-12 instructions">
+
+               <p>You will be given a random number at the start of the game.</p>              
+               <p>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</p>
+               <p>You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.</p>
+               <p>The value of each crystal is hidden from you until you click on it.</p>
+               <p>Each time the game starts, the game will change the values of each crystal.</p>
+            
+            </div>
+        
+        </div>
+        <!-- stats -->
+        <div class="row">
+
+            <div class="col-md-4">
+                <h3>
+                    Number to match:<span id="numberToMatch"></span>
+                </h3>
+
+            </div>
+
+            <div class ="col-md-4">
+               
+                <h3>
+                    Your Total Score:<span id = "playerScore"></span>
+                </h3>
+           
+            </div>
+
+            <div class ="col-md-4">
+               
+                    <h3>
+                        Wins:<span id="Wins"></span>
+                    </h3>
+                        <br>
+                    <h3>
+                        Losses:<span id="losses"></span>
+                    </h3>
+               
+            </div>
+       
+        </div>
+        <!-- crystals -->
+        <div class="row">
+        
+            <div class="col-sm-3">
+                <img src = "https://i.ebayimg.com/images/g/NxEAAOSwFV9Xw2DY/s-l300.jpg" class="img-red" alt="red" width = "175" height = "175">
+            </div>
+
+            <div class="col-sm-3">
+                    <img src = "https://images-na.ssl-images-amazon.com/images/I/41CDCmrq53L.jpg" class="img-blue" alt="blue" width = "175" height = "175">
+            </div>
+
+            <div class="col-sm-3">
+                    <img src = "data:image/jpeg;base64,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" class="img-yellow" alt="yellow" width = "175" height = "175">
+            </div>
+
+            <div class="col-sm-3">
+                    <img src = "https://images-na.ssl-images-amazon.com/images/I/41AuTi-I4yL.jpg" class="img-green" alt="green" width = "175" height = "175">
+            </div>
+
+        </div>
+    
+    </div>
+</body>
+<script src="assets/javascript/game.js"></script>
+</html>
